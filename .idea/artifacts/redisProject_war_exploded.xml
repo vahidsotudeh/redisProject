@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="redisProject" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jedis-2.0.0" />
+        </element>
       </element>
     </root>
   </artifact>
