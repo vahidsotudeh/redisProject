@@ -16,7 +16,10 @@ public class index extends HttpServlet {
         response.setContentType("text/html");
 
         // Actual logic goes here.
-        PrintWriter out = response.getWriter();
-        out.println("<h1>" + Main.s + "</h1>");
+//        PrintWriter out = response.getWriter();
+//        out.println("<h1>" + Main.s + "</h1>");
+
+        request.setAttribute("Title", Main.s);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }
