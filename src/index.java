@@ -13,13 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class index extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-
-        // Actual logic goes here.
-//        PrintWriter out = response.getWriter();
-//        out.println("<h1>" + Main.s + "</h1>");
-
-        request.setAttribute("Title", Main.s);
-        request.getRequestDispatcher("/temp.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
+
 }

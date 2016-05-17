@@ -17,6 +17,8 @@ public class SignUp extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
+        System.out.println(action);
+        System.out.println(req.getMethod());
         if (action.equals("signup")) {
             if (!jedis.exists(req.getParameter("email"))) {
                 String tempPersonal = encode(req.getParameter("firstName"), req.getParameter("lastName"), req.getParameter("email"), req.getParameter("password"));
@@ -28,13 +30,15 @@ public class SignUp extends HttpServlet {
             out.println("<h1>" + req.getParameter("firstName") + "</h1>");
         }
         else {
-
+            System.out.println(req.getParameter("email"));
             if (jedis.exists(req.getParameter("email"))) {
                 String value = jedis.get(req.getParameter("email"));
                 if (getPass(value).equals(req.getParameter("pass"))) {
                     HttpSession session=req.getSession();
                     session.setAttribute("email",req.getParameter("email"));
-                    session.setAttribute("isLogin",true);
+                    session.setAttribute("isLogin","true");
+                    session.setAttribute("user",getFirst(jedis.get(req.getParameter("email"))));
+                    req.getRequestDispatcher("/index.jsp").forward(req, resp);
                 }
             }
         }
