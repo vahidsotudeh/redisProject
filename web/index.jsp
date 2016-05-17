@@ -61,7 +61,7 @@
                         </a>
                         </li>
                         <% } else { %>
-                        <li><a href="/login_signup.html"><i class="fa fa-user"></i> Login</a></li>
+                        <li><a href="/login_signup.jsp"><i class="fa fa-user"></i> Login</a></li>
                         <% } %>
                         <form action="/logout" method="post" style="display: inline">
                             <li>
