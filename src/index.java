@@ -20,6 +20,6 @@ public class index extends HttpServlet {
 //        out.println("<h1>" + Main.s + "</h1>");
 
         request.setAttribute("Title", Main.s);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/temp.jsp").forward(request, response);
     }
 }

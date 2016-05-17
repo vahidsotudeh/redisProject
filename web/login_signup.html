@@ -36,6 +36,8 @@
                 First Name<span class="req">*</span>
               </label>
               <input type="text" name="firstName" required autocomplete="off" />
+              <input hidden type="text" name="action" autocomplete="off" value="signup"  />
+
             </div>
         
             <div class="field-wrap">
@@ -69,7 +71,7 @@
         <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="/" method="post">
+          <form action="/signup" method="post">
           
             <div class="field-wrap">
             <label>
@@ -77,8 +79,8 @@
             </label>
             <input type="email"required autocomplete="off"/>
           </div>
-          
-          <div class="field-wrap">
+            <input hidden type="text" name="action" autocomplete="off" value="login"  />
+            <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
